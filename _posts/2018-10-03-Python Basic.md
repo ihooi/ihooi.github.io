@@ -35,15 +35,11 @@ family = ["Jack", 168, "SY", 153, "Mom", 160, "Dad", 180]
 
 ```python
 family2=[["Jack", 168], ["SY", 153], ["Mom", 160], ["Dad", 180]]
-<<<<<<< HEAD
 ~~~
 
-~~~python
+~~~pythone
 2 == (1 + 1)
 "intermediate" != "python"
 True != False
 "Python" != "python"
 ~~~
-=======
-```
->>>>>>> 3ec8bf2bd92354b54714e87fa5c8a19b7f18d8aa
