@@ -15,9 +15,11 @@ tags: python
 - type()을 통해 변수의 타입을 알 수 있다
 
 ~~~Python
+
 height = 168
 type(height)
 <class 'int'>
+
 ~~~
 
 ### Python List
@@ -27,18 +29,24 @@ type(height)
 - 다른 타입들도 함께 저장 가능
 
 ~~~Python
+
 family = ["Jack", 168, "SY", 153, "Mom", 160, "Dad", 180]
+
 ~~~
 
 - 리스트안에 리스트를 넣을 수 있다
 
 ~~~python
+
 family2=[["Jack", 168], ["SY", 153], ["Mom", 160], ["Dad", 180]]
+
 ~~~
 
 ~~~python
+
 2 == (1 + 1)
 "intermediate" != "python"
 True != False
 "Python" != "python"
+
 ~~~
