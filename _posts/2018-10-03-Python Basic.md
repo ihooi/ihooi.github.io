@@ -36,10 +36,3 @@ family = ["Jack", 168, "SY", 153, "Mom", 160, "Dad", 180]
 ~~~python
 family2=[["Jack", 168], ["SY", 153], ["Mom", 160], ["Dad", 180]]
 ~~~
-
-~~~python
-2 == (1 + 1)
-"intermediate" != "python"
-True != False
-"Python" != "python"
-~~~
