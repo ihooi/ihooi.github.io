@@ -17,6 +17,7 @@ max(height)
 ~~~
 
 - round() 예시
+
 ~~~python
 round(168.2582, 1)
 168.3
