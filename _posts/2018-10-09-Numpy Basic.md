@@ -1,6 +1,6 @@
 ---
 title: Numpy Basic
-key: 20181008
+key: 20181009
 tags: python, Numpy
 ---
 
