@@ -30,10 +30,8 @@ plt.plot(year ,height)
 plt.show()
 ~~~
 
-![plot](./IMG/heightplot.png)
+![plot](/IMG/heightplot.png)
 
-그래프 표현이 잘 안되고 있음
-{:.warning}
 
 - plt.scatter(): 산점도 그래프
 
@@ -42,7 +40,7 @@ plt.scatter(year ,height)
 plt.show()
 ~~~
 
-![scatterplot](./IMG/heightscatter.png)
+![scatterplot](/IMG/heightscatter.png)
 
 - plt.hist(): Histogram 분포도 그래프
   - 데이터 탐색 시 분포를 통해 idea를 얻을 수 있다
@@ -54,7 +52,7 @@ x = [1,4,4,2,6,3,7,1,0,1,0,6,9,1,9,5,3,5,1,4,5,1,3,4,5,1,4]
 plt.hist(x, bin =2)
 ~~~
 
-![hist](./IMG/hist.png)
+![hist](/IMG/hist.png)
 
 ### Customization
 - 그래프 관련 많은 기능들이 있다
