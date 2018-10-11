@@ -31,3 +31,42 @@ plt.show()
 ~~~
 
 ![plot](./IMG/heightplot.png)
+
+그래프 표현이 잘 안되고 있음
+{:.warning}
+
+- plt.scatter(): 산점도 그래프
+
+~~~python
+plt.scatter(year ,height)
+plt.show()
+~~~
+
+![scatterplot](./IMG/heightscatter.png)
+
+- plt.hist(): Histogram 분포도 그래프
+  - 데이터 탐색 시 분포를 통해 idea를 얻을 수 있다
+  - bins를 통해 단위를 지정할 수 있음
+
+~~~python
+x = [1,4,4,2,6,3,7,1,0,1,0,6,9,1,9,5,3,5,1,4,5,1,3,4,5,1,4]
+
+plt.hist(x, bin =2)
+~~~
+
+![hist](./IMG/hist.png)
+
+### Customization
+- 그래프 관련 많은 기능들이 있다
+
+~~~python
+plt.xlabel('x축 레이블')
+plt.ylabel('y축 레이블')
+plt.title('그래프제목')
+
+plt.yticks([0,2,4,6,8,10]) # y축 눈금 표시
+plt.ytics([0,2,4,6,8,10],['0','2y','4y','6y','8y','10y']) #y축 눈금값을 일정 텍스트로 변경
+
+year = [1980, 1985] + year # 데이터 추가
+height = [45, 50] + heght  # 데이터 추가
+~~~
