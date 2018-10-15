@@ -11,7 +11,7 @@ tags: python, Pandas
 ~~~python
 dict = {
         "name" : ["Jack", "Phillip", "Robert", "Adam"],
-        "last name": ["lee", "song", "kim", "park"],
+        "last": ["lee", "song", "kim", "park"],
         "age" : [26, 32, 45, 55],
         "height": [180.2, 169.8, 175.3, 192.1]
         } # Dictionary 만드는 방법도 참고
@@ -22,7 +22,7 @@ friend = pd.DataFrame(dict)
 
 friend
 
-      name last name  age  height
+      name      last  age  height
 0     Jack       lee   26   180.2
 1  Phillip      song   32   169.8
 2   Robert       kim   45   175.3
@@ -32,7 +32,7 @@ friend.index = ["JL", "PS", "RK", "AP"]  # 인덱스 Name을 변경할 수 있�
 
 friend
 
-       name last name  age  height
+       name      last  age  height
 JL     Jack       lee   26   180.2
 PS  Phillip      song   32   169.8
 RK   Robert       kim   45   175.3
