@@ -1,5 +1,5 @@
 ---
-title: Dictionary
+title: Pandas Basic
 key: 20181015
 tags: python, Pandas
 ---
