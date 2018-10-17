@@ -43,7 +43,7 @@ height > 160 and height < 180
 ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
 ~~~
 
-- logical_and() / logical_or() / logical_not() 을 써야함
+- `logical_and()` / `logical_or()` / `logical_not()` 을 써야함
 
 ~~~python
 np.logical_and(height > 160, height < 180)
@@ -55,7 +55,7 @@ array([168, 179, 172])
 ~~~
 
 ### Conditional Statement (조건문)
-- 조건문도 영어의 'if', 'elif(else if)', 'else' 로 간단히 이해할 수 있다.
+- 조건문도 영어의 `if`, `elif`(else if), `else` 로 간단히 이해할 수 있다.
 - 작성 요령이 중요함
 
 ~~~python
