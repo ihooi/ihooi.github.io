@@ -20,6 +20,7 @@ tags: python, Comparison, Boolean, conditional
 
   - not True = False
   - not False = True
+
 - 가장 확실한 방법은 노트에 써보면서 해보면 실수가 없다
 
 ### Numpy에서의 Boolean
