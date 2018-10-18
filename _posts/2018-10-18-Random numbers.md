@@ -121,7 +121,7 @@ plt.hist(final_tails, bins = 10)
 plt.show()
 ~~~
 
-![coinhist](/IMG/coinhist.png)
+![coin_hist](/IMG/coin_hist.png)
 
 
 #### 주사위 던지기 조건
