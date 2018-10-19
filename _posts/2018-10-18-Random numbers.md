@@ -122,6 +122,7 @@ plt.show()
 ~~~
 
 ![coin_hist](/IMG/coin_hist.png)
+- *__결국 50%에 수렴되는 것을 알 수 있다__*
 
 
 #### 주사위 던지기 조건
@@ -130,4 +131,39 @@ plt.show()
 - '3'~'5'가 나오면 한칸 전진한다 (+1)
 - '6'이 나오면 다시 던지고 __나온 숫자만큼 이동한다__
 - '0' 이하로 물러설 수 없다
-- 시뮬레이션을 통해 분산을 확인
+- 100번 던지기를 500번 시뮬레이션을 통해 분산을 확인
+
+~~~python
+# 관련 패키지를 불러온다
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+#알고리즘 만들기
+np.random.seed(111) # Seed정하기
+
+all_walks = [] #최종 걸음 수는 빈 리스트로
+for x in range(500): # 100번하는 판을 500번 해보기
+    walks = [0]
+    for i in range(100): # 주사위 100번 던지는 동안
+        step = walks[-1] # step은 walks 변수의 마지막 값
+        dice = np.random.randint(1,7) # 주사위는 1에서 6까지 랜덤 Int.
+        if dice <= 2:
+            step = max(0, step - 1) # 주사위가 2와같거나 작으면 step - 1. 단, 0 밑으로는 내려갈 수 없다
+        elif dice <= 5:
+            step = step + 1 # 5와 같거나 작으면 step + 1, 1~2라면 앞열에서 먼저 수행하므로 3 < step < 5로 표현하지 않아도 됨
+        else:
+            step = step + np.random.randint(1,7) #6일 경우(위 상황이 아닐경우), 다시 랜덤 숫자 뽑아서 더하기
+        walks.append(step) # 나온 스텝 값들은 Walks에 Add
+    all_walks.append(walks) # 각판의 walks 값을 add하는 것을 500번 수행
+
+np_aw = np.array(all_walks) # 행렬 형태로 변환
+np_aw_t = np.transpose(np.array(all_walks)) # 행렬의 차원을 재배치 (x 축, y축 바뀌게)
+
+ends = np_aw_t[-1] # 최종값만
+
+plt.hist(ends, bins = 10) #히스토그램
+~~~
+
+![dice_hist](/img/dice_hist.png)
