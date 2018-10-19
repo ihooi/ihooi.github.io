@@ -166,4 +166,4 @@ ends = np_aw_t[-1] # 최종값만
 plt.hist(ends, bins = 10) #히스토그램
 ~~~
 
-![dice_hist](/img/dice_hist.png)
+![dice_hist](/IMG/dice_hist.png)
