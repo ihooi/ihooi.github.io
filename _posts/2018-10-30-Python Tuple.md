@@ -7,7 +7,7 @@ tags: python, Tuple
 ### Tuple
 - List처럼 여러개의 Value를 가질 수 있다
 - **Tuple은 Value를 수정할 수 없다**
-- 소괄호를 써서 표현한
+- 소괄호를 써서 표현한다
 
 ~~~python
 my_num = (1, 2, 3)
