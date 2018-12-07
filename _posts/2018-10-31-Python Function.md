@@ -72,6 +72,7 @@ def square(value):
   return squared_value
 ~~~
 
+#### Multi parameter
 - 당연하게도 복수의 Parameter 사용이 가능하다
 
 ~~~python
@@ -102,3 +103,111 @@ result = plus_avg(10, 30)
 print(result)
 (40, 20.0)
 ~~~
+
+#### Global / Local Scope
+- def 안에 있는 variables는 def안에 종속되게 되어있다. (Local)
+
+```python
+new_num = 2
+
+def double(value):
+    new_num = value*2
+    return new_num
+    
+double(2)
+4
+
+new_num  # 함수대로라면 new_num은 4가 되있어야 하지만 지역 변수이므로 함수 안에서만 적용된다
+2
+```
+
+- 'global'을 이용하면 전역으로 사용 가능하다.
+
+```python
+new_num = 2
+
+def double(value):
+    global new_num
+    new_num = value*2
+    return new_num
+    
+double(2)
+4
+
+new_num
+4
+```
+
+#### Nested Funtions
+- 함수 안에 함수를 포함하는 것도 가능하다
+
+```python
+def three_repeat(w1,w2, w3):
+    def inner(word):
+        return word*3
+    return (inner(w1), inner(w2), inner(w3))  #튜플로 리턴한다
+    
+print(three_repeat('a','b','c'))
+('aaa', 'bbb', 'ccc')
+```
+
+- global과는 다르지만 non-local로 쓸 수 도 있다
+
+```python
+def outer():
+    n = 1
+    def inner():
+        nonlocal n
+        n = 2
+        print(n)
+    inner()
+    print(n)
+    
+outer() 
+2
+2
+ ###처음에 n이 1로 지정되었지만 inner에서 n은 2로 지정되었고 이는 nolocal로 지정되었다.
+```
+- 기계가 검색할 때는 LEGB 순서로 검색한단다.(Local-Enclosing Functions-Global-Built-in)
+
+#### Default & Flexible argument
+- 특정 argument의 디폴트 값을 지정할 수 있다
+```python
+def multiple (val, mul=1): # mul의 default값을 정해버렸다
+    new_val = val*mul
+    return new_val
+    
+multiple(2,3)
+6
+multiple(3,4)
+12
+multiple(4)
+4
+``` 
+
+- '''args'''를 통해 argument를 유동적으로 할 수 있다
+```python
+def add(*args):
+    sum_all = 0
+    for num in args:
+        sum_all += num
+    return sum_all
+
+add(1,2,3)
+6
+
+add(1,2,3,4,5,6,7,8,9)
+45
+```
+
+- keyword/value로 구성된 argument는 '''**kwarg'''를 사용하자
+```python
+def print_fullname(**kwarg):
+    for key, value in kwarg.items():
+        print(key + ": "+ value)
+        
+print_fullname(last='Lee', first='Jack')
+last: Lee
+first: Jack
+```
+
