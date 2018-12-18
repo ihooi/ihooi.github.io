@@ -17,7 +17,7 @@ def sqrt(x):
         return x ** 0.5
     except:
         print('x must be an int or float')
-"""try를 해보다가 에러나면 아래 스트링을 출력하라"""        
+### try를 해보다가 에러나면 아래 스트링을 출력하라        
 
 sqrt(4)
 2.0
@@ -27,4 +27,31 @@ sqrt(10.0)
 
 sqrt('hi')
 x must be an int or float
+```
+
+#### raise
+- raise를 통해 지정된 에러를 실행시킬 수 있다.
+
+```python
+def sqrt(x):
+    if x < 0:
+        raise ValueError('x must be non-negative')
+    try:
+        return x ** 0.5
+    except TypeError:
+        print('x must be an int or float')
+        
+ 
+sqrt(-2)
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+  File "<input>", line 3, in sqrt
+ValueError: x must be non-negative
+
+sqrt('hi')
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+  File "<input>", line 2, in sqrt
+TypeError: '<' not supported between instances of 'str' and 'int'
+        
 ```
