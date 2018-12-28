@@ -129,4 +129,79 @@ for index, name in enumerate(classroom, start=100):
 103 Jacob
 ```
 
+
 ####zip()
+- 말그대로 2개의 연속형을 붙이는 기능
+
+```python
+firstname = ['Jack', 'Lynette', 'Brian']
+lastname = ['Lee', 'White', 'McCoy']
+
+fullname = zip(firstname, lastname)
+list_fullname = list(fullname)
+
+print(list_fullname)
+[('Jack', 'Lee'), ('Lynette', 'White'), ('Brian', 'McCoy')]
+```
+
+- for문으로 풀어서 쓸 수도 있다.
+
+```python
+firstname = ['Jack', 'Lynette', 'Brian']
+lastname = ['Lee', 'White', 'McCoy']
+
+for z1, z2 in zip(firstname, lastname):
+    print(z1, z2)
+
+Jack Lee
+Lynette White
+Brian McCoy
+```
+- '*'를 쓰는 것도 가능하다
+
+```python
+firstname = ['Jack', 'Lynette', 'Brian']
+lastname = ['Lee', 'White', 'McCoy']
+
+fullname = zip(firstname, lastname)
+
+print(*fullname)
+
+('Jack', 'Lee') ('Lynette', 'White') ('Brian', 'McCoy')
+
+```
+
+#### 빅데이터 처리를 위한 Iterator 활용
+- 데이터가 너무 크면 메모리에 다 올릴 수가 없다
+- 이럴때는 데이터를 Chunk 단위로 끊어서 로드할 수 있다
+- Pandas에서 chunksize를 지정할 수 있다.
+
+```python
+import pandas as pd
+
+result= []  # 빈 리스트 생성
+
+for chunk in pd.read_csv('data,csv', chunksize=500): # reda_csv를 이용해 csv파일를 불러오되 chunksize는 500으로 
+    result.append(sum(chunk['x'])) # chunk의 sum을 구해 append
+    
+total = sum(result)
+print(total)
+42525
+
+```
+
+- 빈리스트가 아니라 이니셜 수를 넣으면 더 간단하다
+
+```python
+import pandas as pd
+
+total = 0 # 초기값 세팅
+
+for chunk in pd.read_csv('data.csv', chunksize=500):
+    total += sum(chunk['x'])
+    
+print(total)
+42525
+
+```
+
